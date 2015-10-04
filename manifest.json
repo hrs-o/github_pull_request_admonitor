@@ -1,0 +1,22 @@
+{
+  "name": "GitHub Pull Request Admonitor",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "GitHub Pull Request Admonitor",
+  "web_accessible_resources": ["jquery-2.1.4.min.map"],
+  "options_page": "options.html",
+  "background": {
+    "scripts":[
+      "js/jquery-2.1.4.min.js",
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/pull/*"],
+      "js": ["js/jquery-2.1.4.min.js", "js/content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
